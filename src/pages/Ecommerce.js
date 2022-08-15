@@ -1,9 +1,11 @@
 import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
+import { BsCurrencyDollar, BsBoxSeam } from 'react-icons/bs';
 import {GoPrimitiveDot} from 'react-icons/go'
 import {Stacked,Pie,Button,SparkLine} from '../components';
 import { earningData,SparklineAreaData,ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../context/ContextProvider';
+import { ButtonModelProps } from '@syncfusion/ej2/notifications';
+import Buttons from '../components/Buttons';
 
 
 const Ecommerce = () => {
@@ -18,16 +20,40 @@ const Ecommerce = () => {
                 bg-center'>
                     <div className='flex justify-between items-center'>
                         <div>
-                        <p className='font-bold text-gray-400'>Earnings</p>
-                        <p className='text-2xl'>$ 78.000.234</p>
+                            <p className='font-bold text-gray-400'>Earnings</p>
+                            <p className='text-2xl'>$ 78.000.234</p>
                         </div>
                     </div>
-
                     <div className='mt-6'>
-                        
+                        <Buttons
+                            color="white"
+                            bgColor="blue"
+                            text="Download"
+                            borderRadius="10px"
+                            size="10px"
+                        />
                     </div>
                 </div>
             </div>
+            <div className='flex m-3 flex-wrap justify-center items-center'>
+                    {
+                        earningData.map((item)=>(
+                           <div className='bg-white dark:bg-secondary-dark-bg md:w-52 p-4 pt-9 rounded-2xl'>
+                                <button type='button' style={{color:item.iconColor,backgroundColor:item.iconBg}} className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl">
+                                    {item.icon}
+                                </button>
+                                <p className='mt-3'>
+                                    <span className='text-lg font-semibold'>
+                                        {item.amount}
+                                    </span>
+                                    <span className={`text-sm text-${item.pcColor} ml-2`}>
+                                        {item.percentage}
+                                    </span>
+                                </p>
+                           </div> 
+                        ))
+                    }
+                </div>
             
         </div>
     );
