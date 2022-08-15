@@ -47,13 +47,12 @@ const App = () => {
                bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                   <Navbar/>
               </div>
-          </div>
-
+        
           <div>
           <Routes>
             {/* DashBoead */}
             <Route path="/" element={<Ecommerce />} />
-            <Route path="/Ecommerce" element={<Ecommerce />} />
+            <Route path="/Ecommerce" element={<Ecommerce/>} />
 
             {/* Pages */}
             <Route path="/Orders" element={<Orders/>} />
@@ -76,6 +75,7 @@ const App = () => {
             <Route path="/pyramid" element={<Pyramide />} />
             <Route path="/stacked" element={<Stacked />} />
           </Routes>
+          </div>
           </div>
       </div>
     </BrowserRouter>

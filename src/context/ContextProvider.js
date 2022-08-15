@@ -4,7 +4,7 @@ const StateContext=createContext();
 const InitialState={
     chat:false,
     cart:false,
-    useProfile:false,
+    useProfileData:false,
     notification:false
 }
 
@@ -12,18 +12,21 @@ const InitialState={
 
 export const ContextProvider=({children})=>{
     const [activeMenu,setActiveMenu] = useState(true)
-    const [ischecked,setIschecked]=useState(InitialState)
+    const [iscliked,setIsCliked]=useState(InitialState)
+    const [screensize,setScreensize]=useState('undefinid')
 
     const handlClick=(checked)=>{
-        setIschecked({...InitialState,[checked]:true})
+        setIsCliked({...InitialState,[checked]:true})
     }
     return (
         <StateContext.Provider value={
             {activeMenu
             ,setActiveMenu,
-            ischecked,
-            setIschecked,
-            handlClick
+            iscliked,
+            setIsCliked,
+            handlClick,
+            screensize,
+            setScreensize
         }
         }>
         {children}
