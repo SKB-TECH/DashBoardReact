@@ -34,8 +34,7 @@ const Ecommerce = () => {
                         />
                     </div>
                 </div>
-            </div>
-            <div className='flex m-3 flex-wrap justify-center items-center'>
+                <div className='flex m-3 flex-wrap justify-center items-center'>
                     {
                         earningData.map((item)=>(
                            <div className='bg-white dark:bg-secondary-dark-bg md:w-52 p-4 pt-9 rounded-2xl'>
@@ -50,11 +49,23 @@ const Ecommerce = () => {
                                         {item.percentage}
                                     </span>
                                 </p>
+                                <p className='text-sm text-gray-400 mt-1'>
+                                    {item.title}
+                                </p>
                            </div> 
-                        ))
-                    }
+                        ))}
                 </div>
-            
+            </div>
+            <div className=' flex gap-10 flex-wrap justify-center'>
+                <div className='bg-white dark:text-gray-200 
+                darkbg-secondary-dark-bg m-3 rounded-2xl md:w-780'>
+                    <div className='flex justify-between'>
+                            <p className='font-semibold text-xl'>
+                                Revenu updates
+                            </p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
